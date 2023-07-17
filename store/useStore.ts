@@ -10,5 +10,7 @@ export const useStore = defineStore("store", {
         }
     },
 
-    persist: true
+    persist: {
+        storage: persistedState.cookiesWithOptions(),
+    },
 });

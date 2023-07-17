@@ -7,8 +7,13 @@ export const useStore = defineStore("store", {
     actions: {
         setToken(token: string) {
             this.token = token;
+            useFetch('/api/setCookie', {
+                method: 'POST',
+                body: { token }
+            })
+        },
+        removeToken() {
+            this.token = "";
         }
-    },
-
-    persist: true
+    }
 });

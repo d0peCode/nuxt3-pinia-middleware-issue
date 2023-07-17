@@ -1,12 +1,10 @@
-import { getCookie } from "h3";
+import { parseCookies } from "h3";
 
 export default defineEventHandler((event) => {
 
-    const cookie = getCookie(event, 'test_cookie')
+    const cookie = parseCookies(event)
 
     console.log('get cookie in Event Handler', cookie)
 
-    return {
-        hello: getCookie(event, 'test_cookie')
-    }
+    return { cookie }
 })

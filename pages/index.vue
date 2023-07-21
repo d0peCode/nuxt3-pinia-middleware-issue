@@ -1,3 +1,11 @@
+<script lang="ts" setup>
+definePageMeta({
+  middleware: 'cookie',
+});
+</script>
 <template>
-  <h1>index.vue</h1>
+  <div>
+    Hello World
+  </div>
 </template>
+<style scoped lang="css"></style>

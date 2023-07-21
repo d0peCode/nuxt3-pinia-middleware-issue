@@ -2,6 +2,7 @@ export default defineNuxtRouteMiddleware(async () => {
     if (process.client) {
         return
     }
-    await $fetch('/api/set-cookie', { method: 'POST' })
-    await $fetch('/api/get-cookie')
+    const event = useRequestEvent()
+    event.$fetch('/api/set-cookie', { method: 'POST' })
+    event.$fetch('/api/get-cookie')
 });
